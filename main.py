@@ -5,6 +5,9 @@ from db import *
 import uvicorn as u
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"Добрый день"}
 
 @app.get('/product/{product_id}')
 async def get_item(product_id: str):
